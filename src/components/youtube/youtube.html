@@ -1,0 +1,8 @@
+<div ng-repeat="video in youtubePlaylist.videos | orderBy: '-publishedAt'" class="video">
+  <!-- <img ng-src="{{video.thumbnails.high.url}}" /> -->
+
+  <youtube-video video-id="video.resourceId.videoId"></youtube-video>
+
+  <!-- <h3>{{ video.title }}</h3> -->
+  <!-- <div class="description" ng-bind-html="video.descriptionHtml"></div> -->
+</div>

@@ -1,0 +1,11 @@
+<div ng-repeat="event in meetups.events | orderBy: '-time' | limitTo: 1 " class="event">
+  <h3>
+    <a ng-href="{{event.event_url}}">{{ event.time | date:'fullDate' }}</a>
+    <div class="tag" ng-class="event.status">{{ event.status === 'past' ? 'Previous Event' : 'Upcoming Event' }}</div>
+    <div class="attendees">
+      <a ng-href="{{event.event_url}}">{{event.yes_rsvp_count}} People {{ event.status === 'past' ? 'Attended' : 'Going' }}</a>
+      <span ng-show="event.status !== 'past'"> | <a ng-href="{{event.event_url}}">RSVP to attend</a></span>
+    </div>
+  </h3>
+  <div ng-bind-html="event.description"></div>
+</div>
